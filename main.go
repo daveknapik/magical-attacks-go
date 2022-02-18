@@ -13,10 +13,11 @@ func main() {
 	fandom := flag.String("fandom", "all", "If specified, restricts attack to words from that fandom (options: precure, sailorMoon)")
 
 	flag.Parse()
-	fmt.Println(generateAttack(*length, *fandom))
+	// join the attack slice into a space-separated string
+	fmt.Println(strings.Join(generateAttack(*length, *fandom), " "))
 }
 
-func generateAttack(l int, f string) string {
+func generateAttack(l int, f string) []string {
 	// accept data and length
 	data := getDataByFandom(f)
 
@@ -31,6 +32,5 @@ func generateAttack(l int, f string) string {
 		attack = append(attack, data[i])
 	}
 
-	// join the attack slice into a space-separated string
-	return strings.Join(attack, " ")
+	return attack
 }
