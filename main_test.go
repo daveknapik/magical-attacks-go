@@ -4,16 +4,6 @@ import (
 	"testing"
 )
 
-func contains(s []string, str string) bool {
-	for _, v := range s {
-		if v == str {
-			return true
-		}
-	}
-
-	return false
-}
-
 func TestGenerateAttack(t *testing.T) {
 	attack := generateAttack(3, "all")
 	if len(attack) != 3 {
