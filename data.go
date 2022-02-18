@@ -32,9 +32,18 @@ func unique(d []string) []string {
 	trackDuplicates := make(map[string]bool)
 	deduped := []string{}
 
+	// loop through the input slice, ignoring the index
 	for _, item := range d {
+
+		// ignore the current boolean value,
+		// we just care if the item has already been found
+		// in a previous iteration of the loop
 		if _, found := trackDuplicates[item]; !found {
+			// this is the first time this item has been encountered,
+			// so note that you found it
 			trackDuplicates[item] = true
+
+			// append it to the slice we are returning
 			deduped = append(deduped, item)
 		}
 	}
@@ -182,6 +191,7 @@ func getData() map[string][]string {
 		"Attack",
 		"Barrage",
 		"Beam",
+		"Beat",
 		"Beauty",
 		"Bird",
 		"Break",
@@ -208,10 +218,12 @@ func getData() map[string][]string {
 		"Delicious",
 		"Destiny",
 		"Destructive",
+		"Diffusion",
 		"Dimension",
 		"Dragon",
 		"Drive",
 		"Drop",
+		"Dynamic",
 		"Escalation",
 		"Evil",
 		"Evolution",
